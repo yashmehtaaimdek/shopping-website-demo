@@ -1,0 +1,28 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log In</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput type="email" placeholder="Email Address" #userEmail required />
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput type="password" placeholder="Password" #userPwd required /> 
+          </mat-form-field>
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="primary" class="btn-block" (click)="authService.SignIn(userEmail.value, userPwd.value)">Log In</button>
+        <button class="btn googleBtn" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Continue with Google
+        </button>
+  
+      </form>
+    </mat-card>
+  </div>
